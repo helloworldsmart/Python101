@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle, Screen
 import random
 # import turtle as t
@@ -22,6 +23,15 @@ import random
 #     timmy_the_turtle.pendown()
 
 tim = Turtle()
+turtle.colormode(255)
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
 
 # My answer
 # for i in range(3, 9):
@@ -30,13 +40,16 @@ tim = Turtle()
 #         tim.forward(100)
 #         tim.right(r)
 
-colours = ["dark slate gray", "royal blue", "firebrick", "medium spring green", "dark magenta", "yellow", "sky blue", "deep pink"]
+#colours = ["dark slate gray", "royal blue", "firebrick", "medium spring green", "dark magenta", "yellow", "sky blue", "deep pink"]
+
+
 directions = [0, 90, 180, 270]
 tim.pensize(15)
 tim.speed("fastest")
 
 for _ in range(200):
-    tim.color(random.choice(colours))
+    # tim.color(random.choice(colours))
+    tim.color(random_color())
     tim.forward(20)
     tim.setheading(random.choice(directions))
 
